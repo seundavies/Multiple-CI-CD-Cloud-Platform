@@ -7,7 +7,7 @@ Creating an automated, production-grade CI/CD pipeline and monitoring configurat
 
 | Provider     | Use Case                                                                 |
 |--------------|--------------------------------------------------------------------------|
-| **AWS**      | Core infrastructure (networking, compute, storage, security, Lambda, etc.) |
+| **AWS**    | Core infrastructure (networking, compute, storage, security, Lambda, etc.) |
 | **GitHub**   | Webhook triggers, GitHub Actions secrets, repo provisioning              |
 | **Cloudflare** | DNS zone + domain management, CDN caching, WAF, SSL                     |
 | **Datadog** (or **Grafana**) | Observability, custom metrics, dashboards, alerting              |
