@@ -27,7 +27,7 @@ resource "aws_autoscaling_group" "asg" {
     desired_capacity = 1
     max_size         = 2
     min_size         = 1
-    vps_zone_identifier = var.private_subnets
+    vpc_zone_identifier   = var.private_subnets
     launch_template {
       id   = aws_launch_template.app.id
       version = "$Latest"
@@ -62,6 +62,7 @@ resource "aws_lb_listener" "app_listener" {
       type = "forward"
       target_group_arn = aws_lb_target_group.app_tg.arn
     }
+}
 
 
 resource "aws_lb_target_group_attachment" "asg_attachment" {
@@ -93,7 +94,7 @@ resource "aws_security_group" "app_sg"{
 resource "aws_security_group" "alb_sg" {
     name        = "alb-sg"
     description  = "Allow HTTP from Internet"
-    vpc_id       = var.
+    vpc_id       = var.vpc_id
     
     ingress {
         from_port = 80
